@@ -17,18 +17,19 @@
   </head>
 
   <body>
-    <div id="starting">
+    <div id="starting"><br>
       <div class="container">
-        <div class="row">
+        <div class="row mb-2">
           <h1>List of Articles
-          <button  type="button" class="btn btn-primary" data-toggle="modal" data-target="#addArticleModal">ADD ARTICLE</button>
+          <button  type="button" class="btn btn-primary" data-toggle="modal"
+              style="margin-right: 10px;"  data-target="#addArticleModal">ADD ARTICLE</button>
           </h1>
           &emsp;
-          <div class="form-inline my-2 my-lg-0" style="margin-left: 40%;">
+          <div class="form-inline my-2 my-lg-0" style="margin-top: 40%;">
             <input class="form-control mr-sm-2" type="text" placeholder="Search" v-model="search_term" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" v-on:click.prevent="getArticles()">Search</button>
           </div>
-          <table class="table">
+          <table class="table" style="margin-top: 5%;">
             <thead>
               <tr>
                 <th scope="col">#</th>
@@ -47,6 +48,7 @@
               </tr>
             </tbody>
           </table>
+
           <!-- Add Article Modal -->
           <div class="modal fade" id="addArticleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -90,6 +92,7 @@
             <div class="loading" v-if="loading===true">Loading&#8230;</div>
           </div>
           <!-- End of add article modal -->
+
           <!-- Edit Article Modal -->
           <div class="modal fade" id="editArticleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
             <div class="modal-dialog" role="document">
