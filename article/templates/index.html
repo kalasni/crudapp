@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{# {% block title %}
+{% block title %}
   Home {{ block.super }}
 {% endblock %} #}
 
@@ -9,7 +9,7 @@
         <div class="row mb-2">
           <h1>List of Articles
           <button  type="button" class="btn btn-primary" data-toggle="modal"
-              style="margin-right: 10px;"  data-target="#addArticleModal">ADD ARTICLE</button>
+              style="margin-right: 50px;"  data-target="#addArticleModal">ADD ARTICLE</button>
           </h1>
           &emsp;
           <div class="form-inline my-2 my-lg-0" style="margin-top: 40%;">
@@ -118,6 +118,7 @@
                   <button type="submit" class="btn btn-primary">Save changes</button>
                 </div>
                 </form>
+
               </div>
             </div>
             <div class="loading" v-if="loading===true">Loading&#8230;</div>
@@ -128,7 +129,7 @@
       </div>
       <div class="loading" v-if="loading===true">Loading&#8230;</div>
     </div>
-    
+
   {% load static %}
     <script type="application/javascript"
         src="{% static 'article/app.js' %}">
@@ -137,7 +138,6 @@
       Vue.http.headers.common['X-CSRFToken'] = "{{ csrf_token }}";
           window.addEventListener("load", function() {
              articleApp.mounted();
-         });
+          });
     </script>
-
  {% endblock %}
